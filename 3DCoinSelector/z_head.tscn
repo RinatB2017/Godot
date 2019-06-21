@@ -1,0 +1,73 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://models/head.obj" type="ArrayMesh" id=1]
+
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 1.67061, 1.60741, 1.76295 )
+
+[sub_resource type="Animation" id=4]
+resource_name = "attack"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("head:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 2, 2, 2 ), Vector3( 2, 2.5, 2 ), Vector3( 2, 0.717328, 2 ), Vector3( 2, 2, 2 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "idle"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("head:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 2, 2, 2 ), Vector3( 2, 2.1, 2 ), Vector3( 2, 2, 2 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "move"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("head:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 2, 2, 2 ), Vector3( 2, 2.46972, 2 ), Vector3( 2, 2, 2 ) ]
+}
+
+[node name="z_head" type="KinematicBody"]
+
+[node name="head" type="MeshInstance" parent="."]
+transform = Transform( 2, 0, 0, 0, 2.00868, 0, 0, 0, 2, 0, 0, 0 )
+mesh = ExtResource( 1 )
+material/0 = null
+
+[node name="body" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0347064, 1.26758, -0.302123 )
+shape = SubResource( 2 )
+
+[node name="anim" type="AnimationPlayer" parent="."]
+autoplay = "idle"
+anims/attack = SubResource( 4 )
+anims/idle = SubResource( 3 )
+anims/move = SubResource( 5 )
+

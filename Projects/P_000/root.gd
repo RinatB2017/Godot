@@ -1,6 +1,6 @@
 extends Node2D
 
-var speed = Vector2(50, 50)
+var speed = Vector2(50, 0)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -23,4 +23,4 @@ func keyboard():
 func _process(delta):
 #	keyboard()
 	$player.look_at($alien.position)
-	$player.position += speed.rotated(rotation) * delta
+	$player.position += speed.rotated($player.rotation) * delta

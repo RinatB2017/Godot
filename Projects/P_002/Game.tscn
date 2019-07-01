@@ -1,22 +1,28 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Platfotn_400.tscn" type="PackedScene" id=2]
-[ext_resource path="res://CanvasLayer.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Platform_100.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Platform_100.gd" type="Script" id=3]
+[ext_resource path="res://Platfotn_400.tscn" type="PackedScene" id=4]
+[ext_resource path="res://CanvasLayer.tscn" type="PackedScene" id=5]
 
 [node name="root" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 470, 110 )
 
-[node name="Platfotn_400" parent="." instance=ExtResource( 2 )]
+[node name="Platform_100" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1450, 440 )
+script = ExtResource( 3 )
+
+[node name="Platfotn_400" parent="." instance=ExtResource( 4 )]
 position = Vector2( 470, 210 )
 
-[node name="Platfotn_401" parent="." instance=ExtResource( 2 )]
+[node name="Platfotn_401" parent="." instance=ExtResource( 4 )]
 position = Vector2( 810, 350 )
 rotation = 0.785397
 
-[node name="Platfotn_402" parent="." instance=ExtResource( 2 )]
-position = Vector2( 1150, 490 )
+[node name="Platfotn_402" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1210, 495 )
 
-[node name="CanvasLayer" parent="." instance=ExtResource( 3 )]
+[node name="CanvasLayer" parent="." instance=ExtResource( 5 )]

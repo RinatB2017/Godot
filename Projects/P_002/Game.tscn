@@ -1,38 +1,22 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Wall.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Player.gd" type="Script" id=3]
+[ext_resource path="res://player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Platfotn_400.tscn" type="PackedScene" id=2]
+[ext_resource path="res://CanvasLayer.tscn" type="PackedScene" id=3]
 
-[node name="Node2D" type="Node2D"]
+[node name="root" type="Node2D"]
 
-[node name="Walls" type="Node2D" parent="."]
-editor/display_folded = true
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 470, 110 )
 
-[node name="StaticBody2D" parent="Walls" instance=ExtResource( 1 )]
-position = Vector2( 333, 535 )
+[node name="Platfotn_400" parent="." instance=ExtResource( 2 )]
+position = Vector2( 470, 210 )
 
-[node name="StaticBody2D7" parent="Walls" instance=ExtResource( 1 )]
-position = Vector2( 333.391, 470.769 )
+[node name="Platfotn_401" parent="." instance=ExtResource( 2 )]
+position = Vector2( 810, 350 )
+rotation = 0.785397
 
-[node name="StaticBody2D2" parent="Walls" instance=ExtResource( 1 )]
-position = Vector2( 397.856, 535 )
+[node name="Platfotn_402" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1150, 490 )
 
-[node name="StaticBody2D3" parent="Walls" instance=ExtResource( 1 )]
-position = Vector2( 462.578, 535 )
-
-[node name="StaticBody2D4" parent="Walls" instance=ExtResource( 1 )]
-position = Vector2( 528.959, 535 )
-
-[node name="StaticBody2D5" parent="Walls" instance=ExtResource( 1 )]
-position = Vector2( 594.365, 535 )
-
-[node name="StaticBody2D6" parent="Walls" instance=ExtResource( 1 )]
-position = Vector2( 661.168, 535 )
-
-[node name="StaticBody2D8" parent="Walls" instance=ExtResource( 1 )]
-position = Vector2( 660.627, 470.268 )
-
-[node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 493.587, 51.1544 )
-script = ExtResource( 3 )
+[node name="CanvasLayer" parent="." instance=ExtResource( 3 )]

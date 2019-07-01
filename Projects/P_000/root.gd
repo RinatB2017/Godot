@@ -18,9 +18,12 @@ func keyboard():
 
 	if(Input.is_action_pressed("ui_down")):
 		$player.position.y = $player.position.y + 1
+		
+func player_moved(delta):
+	$player.look_at($alien.position)
+	$player.position += speed.rotated($player.rotation) * delta
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-#	keyboard()
-	$player.look_at($alien.position)
-	$player.position += speed.rotated($player.rotation) * delta
+	keyboard()
+	player_moved(delta)

@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Target.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Cannon.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Block.tscn" type="PackedScene" id=3]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Target" parent="." instance=ExtResource( 1 )]
+position = Vector2( 728.471, 349.306 )
+rotation = 0.0069883
+
+[node name="Cannon" parent="." instance=ExtResource( 2 )]
+position = Vector2( 376.116, 382.547 )
+
+[node name="Block" parent="." instance=ExtResource( 3 )]
+position = Vector2( 726.255, 493.35 )

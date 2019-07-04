@@ -7,7 +7,7 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="Target" parent="." instance=ExtResource( 1 )]
-position = Vector2( 728.471, 349.306 )
+position = Vector2( 727.363, 359.066 )
 rotation = 0.0069883
 
 [node name="Cannon" parent="." instance=ExtResource( 2 )]

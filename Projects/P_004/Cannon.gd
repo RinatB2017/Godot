@@ -10,15 +10,18 @@ var dir_bullet = 1
 func push():
 	var bul = Bullet.instance()
 	get_node("../").add_child(bul)
+
+	bul.position = position + Vector2(50, 0)
+	bul.apply_impulse(Vector2(), Vector2(800, 0))
 	
 	#смена напраления
-	dir_bullet *= -1
-	if dir_bullet > 0:
-		bul.position = position + Vector2(50, 0)
-		bul.apply_impulse(Vector2(), Vector2(800, 0))
-	else:
-		bul.position = position + Vector2(-50, 0)
-		bul.apply_impulse(Vector2(), Vector2(-800, 0))
+#	dir_bullet *= -1
+#	if dir_bullet > 0:
+#		bul.position = position + Vector2(50, 0)
+#		bul.apply_impulse(Vector2(), Vector2(800, 0))
+#	else:
+#		bul.position = position + Vector2(-50, 0)
+#		bul.apply_impulse(Vector2(), Vector2(-800, 0))
 	
 func auto_gun(delta):
 	timer += delta
@@ -28,9 +31,9 @@ func auto_gun(delta):
 
 func _physics_process(delta):
 	# mouse push
-#	if Input.is_action_just_pressed("push"):
-#		push()
-	auto_gun(delta)
+	if Input.is_action_just_pressed("push"):
+		push()
+#	auto_gun(delta)
 
 	if Input.is_action_pressed("ui_left"):
 		dir.x = -1

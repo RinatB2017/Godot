@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://labirint/block/iblock.png" type="Texture" id=1]
+[ext_resource path="res://labirint/block/block.png" type="Texture" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 32.0905, 31.8603 )
+extents = Vector2( 50.0811, 49.996 )
 
 [node name="Block" type="StaticBody2D"]
 

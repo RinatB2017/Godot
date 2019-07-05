@@ -4,7 +4,8 @@ var tm = 0
 
 func _physics_process(delta):
 	tm += delta
-	if !get_viewport_rect().has_point(position) || tm >= 1:
+#	if !get_viewport_rect().has_point(position) || tm >= 1:
+	if tm >= 1:
 		queue_free()
 
 # не забудь установить для Bullet:

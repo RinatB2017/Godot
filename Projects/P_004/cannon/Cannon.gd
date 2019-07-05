@@ -3,7 +3,7 @@ extends KinematicBody2D
 const SPEED = 100
 var dir = Vector2()
 
-var Bullet = preload("res://bullet/Bullet.tscn" )
+var Bullet = preload("res://bullet/Bullet.tscn")
 var timer = 0 
 var dir_bullet = 1
 

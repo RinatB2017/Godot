@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://target/Target.tscn" type="PackedScene" id=1]
 [ext_resource path="res://cannon/Cannon.tscn" type="PackedScene" id=2]
 [ext_resource path="res://block/Block.tscn" type="PackedScene" id=3]
 [ext_resource path="res://wall/Wall.tscn" type="PackedScene" id=4]
+[ext_resource path="res://icon.png" type="Texture" id=5]
+[ext_resource path="res://TextureButton.gd" type="Script" id=6]
 
 [node name="Node2D" type="Node2D"]
 
@@ -30,3 +32,12 @@ scale = Vector2( 2.65275, -1.37524 )
 position = Vector2( 50.3338, 314.246 )
 rotation = 1.56984
 scale = Vector2( 2.65275, -1.37524 )
+
+[node name="TextureButton" type="TextureButton" parent="."]
+margin_left = 101.902
+margin_top = 84.7139
+margin_right = 165.902
+margin_bottom = 148.714
+texture_normal = ExtResource( 5 )
+script = ExtResource( 6 )
+[connection signal="pressed" from="TextureButton" to="TextureButton" method="_on_TextureButton_pressed"]

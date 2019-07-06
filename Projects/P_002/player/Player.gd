@@ -12,6 +12,9 @@ var Bullet = preload("res://bullet/Bullet.tscn" )
 var vel = Vector2()
 var flag_on_floor = false
 
+func is_player():
+	pass
+
 func push():
 	var bul = Bullet.instance()
 	get_node("../").add_child(bul)

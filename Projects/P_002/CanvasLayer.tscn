@@ -15,7 +15,7 @@ normal = ExtResource( 1 )
 action = "ui_right"
 
 [node name="btn_jump" type="TouchScreenButton" parent="."]
-position = Vector2( 880, 450 )
-scale = Vector2( 1.9375, 1.9375 )
+position = Vector2( 880, 451.053 )
+scale = Vector2( 2, 2 )
 normal = ExtResource( 1 )
 action = "ui_up"

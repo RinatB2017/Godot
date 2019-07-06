@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Root.gd" type="Script" id=1]
+[ext_resource path="res://Area2D.tscn" type="PackedScene" id=2]
 
 [node name="Root" type="Area2D"]
 script = ExtResource( 1 )
@@ -18,3 +19,6 @@ margin_top = 66.6489
 margin_right = 66.5898
 margin_bottom = 80.6489
 text = "Y"
+
+[node name="Area2D" parent="." instance=ExtResource( 2 )]
+position = Vector2( 533.561, 294.14 )

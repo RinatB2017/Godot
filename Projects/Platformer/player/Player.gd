@@ -1,23 +1,26 @@
 extends KinematicBody2D
 
 const SPEED = 200
-const GRAVITY = 10
-const JUMP = 500
+const GRAVITY = 20
+const JUMP = 700
 const VTOP = Vector2(0, -1)
 
+var energy = 100
 var dir = 1
 
 var Bullet = preload("res://bullet/Bullet.tscn" )
 
 var vel = Vector2()
-var flag_on_floor = false
 
-func is_player():
+func XXX() :
+	print("XXX")
 	pass
 
 func shoot():
 	var bul = Bullet.instance()
 	get_node("../").add_child(bul)
+	
+	#bul.set_damage(150)
 
 	if dir > 0:
 		bul.position = position + Vector2(50, 0)
@@ -26,8 +29,14 @@ func shoot():
 		bul.position = position + Vector2(-50, 0)
 		bul.apply_impulse(Vector2(), Vector2(-800, 0))
 		
+func get_damage(damage):
+	energy -= damage
+	if energy <= 0:
+		print("FAIL")
+		queue_free()
 
 func _physics_process(delta):
+	get_node("../CanvasLayer/EnergyBar").set_value(energy)
 	if Input.is_action_just_pressed("shoot"):
 		shoot()
 	
@@ -43,9 +52,8 @@ func _physics_process(delta):
 	
 	vel.y += GRAVITY
 	
-	flag_on_floor = is_on_floor()
-	
 	if is_on_floor() && Input.is_action_pressed("ui_up"):
 		vel.y = -JUMP
 
 	vel = move_and_slide(vel, VTOP)
+	#move_and_collide(vel)

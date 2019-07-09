@@ -57,6 +57,7 @@ __meta__ = {
 }
 
 [node name="coins" type="Node" parent="."]
+editor/display_folded = true
 
 [node name="coin" parent="coins" instance=ExtResource( 2 )]
 position = Vector2( 672, 1179 )
@@ -185,6 +186,7 @@ position = Vector2( 4236.75, 541.058 )
 position = Vector2( 4172.75, 541.058 )
 
 [node name="props" type="Node" parent="."]
+editor/display_folded = true
 
 [node name="moving_platform" parent="props" instance=ExtResource( 3 )]
 position = Vector2( 1451.86, 742.969 )
@@ -212,6 +214,7 @@ position = Vector2( 251.684, 1045.6 )
 physics_material_override = SubResource( 1 )
 
 [node name="enemies" type="Node" parent="."]
+editor/display_folded = true
 
 [node name="enemy 5" parent="enemies" instance=ExtResource( 7 )]
 position = Vector2( 834.664, 1309.6 )

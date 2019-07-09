@@ -5,7 +5,7 @@ var taken = false
 
 
 func _on_body_enter( body ):
-	if not taken and body is preload("res://player.gd"):
+	if not taken and body is preload("res://player/player.gd"):
 		$anim.play("taken")
 		taken = true
 

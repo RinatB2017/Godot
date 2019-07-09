@@ -5,7 +5,7 @@
 [ext_resource path="res://moving_platform/moving_platform.tscn" type="PackedScene" id=3]
 [ext_resource path="res://seesaw.tscn" type="PackedScene" id=4]
 [ext_resource path="res://one_way_platform/one_way_platform.tscn" type="PackedScene" id=5]
-[ext_resource path="res://player.tscn" type="PackedScene" id=6]
+[ext_resource path="res://player/player.tscn" type="PackedScene" id=6]
 [ext_resource path="res://enemy/enemy.tscn" type="PackedScene" id=7]
 [ext_resource path="res://parallax_bg.tscn" type="PackedScene" id=8]
 

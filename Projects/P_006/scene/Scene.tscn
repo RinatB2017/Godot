@@ -1,0 +1,147 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://block/Block.tscn" type="PackedScene" id=1]
+[ext_resource path="res://player/Player.tscn" type="PackedScene" id=2]
+
+[node name="Scene" type="Node2D"]
+
+[node name="Block" parent="." instance=ExtResource( 1 )]
+position = Vector2( 32, 32 )
+
+[node name="Block2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 96, 32 )
+
+[node name="Block3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 160, 32 )
+
+[node name="Block4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 224, 32 )
+
+[node name="Block5" parent="." instance=ExtResource( 1 )]
+position = Vector2( 288, 32 )
+
+[node name="Block6" parent="." instance=ExtResource( 1 )]
+position = Vector2( 352, 32 )
+
+[node name="Block7" parent="." instance=ExtResource( 1 )]
+position = Vector2( 416, 32 )
+
+[node name="Block31" parent="." instance=ExtResource( 1 )]
+position = Vector2( 480, 32 )
+
+[node name="Block32" parent="." instance=ExtResource( 1 )]
+position = Vector2( 544, 32 )
+
+[node name="Block33" parent="." instance=ExtResource( 1 )]
+position = Vector2( 608, 32 )
+
+[node name="Block34" parent="." instance=ExtResource( 1 )]
+position = Vector2( 672, 32 )
+
+[node name="Block35" parent="." instance=ExtResource( 1 )]
+position = Vector2( 736, 32 )
+
+[node name="Block36" parent="." instance=ExtResource( 1 )]
+position = Vector2( 800, 32 )
+
+[node name="Block37" parent="." instance=ExtResource( 1 )]
+position = Vector2( 864, 32 )
+
+[node name="Block38" parent="." instance=ExtResource( 1 )]
+position = Vector2( 928, 32 )
+
+[node name="Block39" parent="." instance=ExtResource( 1 )]
+position = Vector2( 992, 32 )
+
+[node name="Block40" parent="." instance=ExtResource( 1 )]
+position = Vector2( 992, 96 )
+
+[node name="Block41" parent="." instance=ExtResource( 1 )]
+position = Vector2( 992, 160 )
+
+[node name="Block42" parent="." instance=ExtResource( 1 )]
+position = Vector2( 992, 224 )
+
+[node name="Block43" parent="." instance=ExtResource( 1 )]
+position = Vector2( 992, 288 )
+
+[node name="Block44" parent="." instance=ExtResource( 1 )]
+position = Vector2( 992, 352 )
+
+[node name="Block45" parent="." instance=ExtResource( 1 )]
+position = Vector2( 992, 416 )
+
+[node name="Block46" parent="." instance=ExtResource( 1 )]
+position = Vector2( 992, 480 )
+
+[node name="Block8" parent="." instance=ExtResource( 1 )]
+position = Vector2( 32, 96 )
+
+[node name="Block10" parent="." instance=ExtResource( 1 )]
+position = Vector2( 32, 160 )
+
+[node name="Block12" parent="." instance=ExtResource( 1 )]
+position = Vector2( 32, 224 )
+
+[node name="Block14" parent="." instance=ExtResource( 1 )]
+position = Vector2( 32, 288 )
+
+[node name="Block16" parent="." instance=ExtResource( 1 )]
+position = Vector2( 32, 352 )
+
+[node name="Block18" parent="." instance=ExtResource( 1 )]
+position = Vector2( 33.6702, 416 )
+
+[node name="Block9" parent="." instance=ExtResource( 1 )]
+position = Vector2( 32, 480 )
+
+[node name="Block11" parent="." instance=ExtResource( 1 )]
+position = Vector2( 33.6702, 544 )
+
+[node name="Block13" parent="." instance=ExtResource( 1 )]
+position = Vector2( 96, 544 )
+
+[node name="Block15" parent="." instance=ExtResource( 1 )]
+position = Vector2( 160, 544 )
+
+[node name="Block17" parent="." instance=ExtResource( 1 )]
+position = Vector2( 224, 544 )
+
+[node name="Block19" parent="." instance=ExtResource( 1 )]
+position = Vector2( 288, 544 )
+
+[node name="Block20" parent="." instance=ExtResource( 1 )]
+position = Vector2( 352, 544 )
+
+[node name="Block21" parent="." instance=ExtResource( 1 )]
+position = Vector2( 416, 544 )
+
+[node name="Block22" parent="." instance=ExtResource( 1 )]
+position = Vector2( 480, 544 )
+
+[node name="Block23" parent="." instance=ExtResource( 1 )]
+position = Vector2( 544, 544 )
+
+[node name="Block24" parent="." instance=ExtResource( 1 )]
+position = Vector2( 608, 544 )
+
+[node name="Block25" parent="." instance=ExtResource( 1 )]
+position = Vector2( 672, 544 )
+
+[node name="Block26" parent="." instance=ExtResource( 1 )]
+position = Vector2( 736, 544 )
+
+[node name="Block27" parent="." instance=ExtResource( 1 )]
+position = Vector2( 800, 544 )
+
+[node name="Block28" parent="." instance=ExtResource( 1 )]
+position = Vector2( 864, 544 )
+
+[node name="Block29" parent="." instance=ExtResource( 1 )]
+position = Vector2( 928, 544 )
+
+[node name="Block30" parent="." instance=ExtResource( 1 )]
+position = Vector2( 992, 544 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 192, 384 )

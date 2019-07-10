@@ -5,7 +5,6 @@ var Bullet = preload("res://bullet/Bullet.tscn" )
 var energy = 100
 var timer = 0
 
-
 #
 # получение урона от врага
 #
@@ -25,4 +24,4 @@ func _physics_process(delta):
 	timer += delta
 	if timer > 1:
 		timer = 0
-		shoot()
+		#shoot()

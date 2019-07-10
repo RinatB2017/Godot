@@ -12,10 +12,6 @@ var Bullet = preload("res://bullet/Bullet.tscn" )
 
 var vel = Vector2()
 
-func XXX() :
-	print("XXX")
-	pass
-
 func shoot():
 	var bul = Bullet.instance()
 	get_node("../").add_child(bul)

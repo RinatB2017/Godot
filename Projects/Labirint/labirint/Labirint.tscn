@@ -9,6 +9,7 @@
 position = Vector2( 100, 100 )
 
 [node name="Blocks" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="Block37" parent="Blocks" instance=ExtResource( 2 )]
 position = Vector2( 200, 100 )

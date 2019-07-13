@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 var Bullet = preload("res://bullet/Bullet.tscn")
 var timer = 0 
-const SPEED = 2000
+const SPEED = 1000
 
 func shoot():
 	var bullet_0 = Bullet.instance()

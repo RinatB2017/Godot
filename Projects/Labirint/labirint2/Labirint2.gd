@@ -1,7 +1,7 @@
 extends Node2D
 
 var velocity = Vector2()
-var speed = 500
+var speed = 1500
 var timer = 0;
 var dir
 
@@ -44,6 +44,27 @@ func new_dir2():
 	velocity = velocity.normalized() * speed
 	
 func check_collision():
+	randomize()
+	var random_value = randi()%4
+	#print(random_value)
+	#print(dir)
+	if random_value == 0:
+		move_left()
+		velocity = velocity.normalized() * speed
+		return
+	if random_value == 1:
+		move_right()
+		velocity = velocity.normalized() * speed
+		return
+	if random_value == 2:
+		move_up()
+		velocity = velocity.normalized() * speed
+		return
+	if random_value == 3:
+		move_down()
+		velocity = velocity.normalized() * speed
+		return
+	return;
 	if dir == "up":
 		move_right()
 		velocity = velocity.normalized() * speed

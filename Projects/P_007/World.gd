@@ -5,12 +5,10 @@ var vel = Vector2()
 
 func _physics_process(delta):
 	
-	if $Cannon == null:
-		return
-	
+
 	if !$Cannon.get_viewport_rect().has_point($Cannon.position):
 		print("Die")
-		$Cannon.queue_free()
+		get_tree().change_scene("res://World.tscn")
 	
 	if Input.is_action_pressed("ui_left"):
 		vel.x = -SPEED * delta

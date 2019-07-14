@@ -32,7 +32,7 @@ func get_damage(damage):
 		queue_free()
 
 func _physics_process(delta):
-	get_node("../CanvasLayer/EnergyBar").set_value(energy)
+	#get_node("../CanvasLayer/EnergyBar").set_value(energy)
 	if Input.is_action_just_pressed("shoot"):
 		shoot()
 	

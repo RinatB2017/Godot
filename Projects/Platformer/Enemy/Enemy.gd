@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-var Bullet = preload("res://bullet/Bullet.tscn" )
+var Bullet = preload("res://bullet/bullet.tscn" )
 
 var energy = 100
 var timer = 0

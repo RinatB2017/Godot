@@ -10,7 +10,8 @@ var dir = 1
 
 var Bullet = preload("res://bullet/bullet.tscn" )
 
-var vel = Vector2()
+var velocity = Vector2()
+var speed = 1000
 
 func shoot():
 	var bul = Bullet.instance()
@@ -25,6 +26,9 @@ func shoot():
 		bul.position = position + Vector2(-50, 0)
 		bul.apply_impulse(Vector2(), Vector2(-800, 0))
 		
+func is_player():
+	pass
+		
 func get_damage(damage):
 	energy -= damage
 	if energy <= 0:
@@ -38,18 +42,22 @@ func _physics_process(delta):
 	
 #	check_input()
 	if Input.is_action_pressed("ui_left"):
+		#print("left")
 		dir = -1
-		vel.x = -SPEED
+		velocity.x = -SPEED
 	elif Input.is_action_pressed("ui_right"):
+		#print("right")
 		dir = 1
-		vel.x = SPEED
+		velocity.x = SPEED
 	else:
-		vel.x = 0
+		velocity.x = 0
 	
-	vel.y += GRAVITY
+	velocity.y += GRAVITY
 	
 	if is_on_floor() && Input.is_action_pressed("ui_up"):
-		vel.y = -JUMP
+		#print("jump")
+		velocity.y = -JUMP
 
-	vel = move_and_slide(vel, VTOP)
-	#move_and_collide(vel)
+	velocity = move_and_slide(velocity, VTOP)
+	#velocity = velocity.normalized() * speed
+	#var collision = move_and_collide(velocity * delta)

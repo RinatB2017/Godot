@@ -39,4 +39,3 @@ color = Color( 0.0703125, 0.0703125, 0.0703125, 0 )
 visible = false
 
 [node name="Exploration" parent="." instance=ExtResource( 3 )]
-

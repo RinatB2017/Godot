@@ -257,5 +257,4 @@ texture = ExtResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="platform1"]
 shape = SubResource( 12 )
-
 [connection signal="body_entered" from="princess" to="." method="_on_princess_body_enter"]

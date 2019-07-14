@@ -52,5 +52,4 @@ type = 2
 [node name="Sprite" type="Sprite" parent="Grid/Object"]
 texture = ExtResource( 7 )
 
-
 [editable path="Grid/Actor"]

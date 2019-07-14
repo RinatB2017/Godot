@@ -25,5 +25,5 @@ func _physics_process(delta):
 		set_axis_velocity(velocity)
 
 func _on_Enemy_body_entered(body):
-	if body.has_method("is_player"):
+	if body.get_name() == "Player":
 		body.queue_free()

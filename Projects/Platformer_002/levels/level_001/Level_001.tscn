@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://levels/level_001/Level_001.gd" type="Script" id=1]
 [ext_resource path="res://tiles/tileset.tres" type="TileSet" id=2]
 [ext_resource path="res://portal/portal.tscn" type="PackedScene" id=3]
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://enemy_test/enemy.tscn" type="PackedScene" id=5]
+[ext_resource path="res://enemy_002/Enemy_002.tscn" type="PackedScene" id=6]
 
 [node name="Level_001" type="Node2D"]
 script = ExtResource( 1 )
@@ -21,5 +22,8 @@ position = Vector2( 909.972, 474.091 )
 position = Vector2( 125.275, 466.315 )
 
 [node name="Enemy" parent="." instance=ExtResource( 5 )]
-position = Vector2( 314, 477 )
+position = Vector2( 581, 475 )
+
+[node name="Enemy_002" parent="." instance=ExtResource( 6 )]
+position = Vector2( 287, 386 )
 [connection signal="body_entered" from="Portal" to="." method="_on_Portal_body_entered"]

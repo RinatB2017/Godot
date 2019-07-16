@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://keyboard_2/left.png" type="Texture" id=1]
+[ext_resource path="res://keyboard_2/right.png" type="Texture" id=2]
+[ext_resource path="res://keyboard_2/up.png" type="Texture" id=3]
+
+[node name="Keyboard_2" type="CanvasLayer"]
+
+[node name="btn_left" type="TouchScreenButton" parent="."]
+position = Vector2( 24, 450 )
+scale = Vector2( 2, 2 )
+normal = ExtResource( 1 )
+action = "ui_left"
+
+[node name="btn_right" type="TouchScreenButton" parent="."]
+position = Vector2( 176.638, 450 )
+scale = Vector2( 2, 2 )
+normal = ExtResource( 2 )
+action = "ui_right"
+
+[node name="btn_up" type="TouchScreenButton" parent="."]
+position = Vector2( 724.869, 450 )
+scale = Vector2( 2, 2 )
+normal = ExtResource( 3 )
+action = "ui_up"
+
+[node name="btn_fire" type="TouchScreenButton" parent="."]
+position = Vector2( 881.312, 450 )
+scale = Vector2( 2, 2 )
+normal = ExtResource( 3 )
+action = "shoot"

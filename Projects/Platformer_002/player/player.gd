@@ -34,6 +34,41 @@ func get_damage(damage):
 	if energy <= 0:
 		print("FAIL")
 		queue_free()
+		
+func move_left():
+	#print("left")
+	dir = -1
+	velocity.x = -SPEED
+		
+func move_right():
+	#print("right")
+	dir = 1
+	velocity.x = SPEED
+	
+func move_stop():
+	velocity.x = 0
+	
+func jump():
+	if is_on_floor():
+		#print("jump")
+		velocity.y = -JUMP
+
+func _input(event):
+	if event.is_action_pressed("ui_left"):
+		#print("down")
+		move_left()
+
+	elif event.is_action_released("ui_left"):
+		#print("release")
+		velocity.x = 0
+
+	if event.is_action_pressed("ui_right"):
+		#print("down")
+		move_right()
+
+	elif event.is_action_released("ui_right"):
+		#print("release")
+		velocity.x = 0
 
 func _physics_process(delta):
 	#get_node("../CanvasLayer/EnergyBar").set_value(energy)
@@ -41,22 +76,18 @@ func _physics_process(delta):
 		shoot()
 	
 #	check_input()
-	if Input.is_action_pressed("ui_left"):
-		#print("left")
-		dir = -1
-		velocity.x = -SPEED
-	elif Input.is_action_pressed("ui_right"):
-		#print("right")
-		dir = 1
-		velocity.x = SPEED
-	else:
-		velocity.x = 0
+#	if Input.is_action_pressed("ui_left"):
+#		move_left()
+#	elif Input.is_action_pressed("ui_right"):
+#		move_right()
+#	else:
+#		velocity.x = 0
+
 	
 	velocity.y += GRAVITY
 	
 	if is_on_floor() && Input.is_action_pressed("ui_up"):
-		#print("jump")
-		velocity.y = -JUMP
+		jump()
 
 	velocity = move_and_slide(velocity, VTOP)
 	#velocity = velocity.normalized() * speed

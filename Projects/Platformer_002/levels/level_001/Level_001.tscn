@@ -4,7 +4,7 @@
 [ext_resource path="res://tiles/tileset.tres" type="TileSet" id=2]
 [ext_resource path="res://portal/portal.tscn" type="PackedScene" id=3]
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=4]
-[ext_resource path="res://keyboard_2/Keyboard_2.tscn" type="PackedScene" id=5]
+[ext_resource path="res://keyboard/Keyboard.tscn" type="PackedScene" id=5]
 
 [node name="Level_001" type="Node2D"]
 script = ExtResource( 1 )
@@ -20,5 +20,5 @@ position = Vector2( 909.972, 474.091 )
 [node name="Player" parent="." instance=ExtResource( 4 )]
 position = Vector2( 113.275, 456.315 )
 
-[node name="Keyboard_2" parent="." instance=ExtResource( 5 )]
+[node name="Keyboard" parent="." instance=ExtResource( 5 )]
 [connection signal="body_entered" from="Portal" to="." method="_on_Portal_body_entered"]

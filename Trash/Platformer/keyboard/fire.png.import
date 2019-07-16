@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/up.png-091a1087446f7b75a6f338f6f6ccb0b2.stex"
+path="res://.import/fire.png-ff1d9c527245f827db765bdd6e3c2dd4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://keyboard_2/up.png"
-dest_files=[ "res://.import/up.png-091a1087446f7b75a6f338f6f6ccb0b2.stex" ]
+source_file="res://keyboard/fire.png"
+dest_files=[ "res://.import/fire.png-ff1d9c527245f827db765bdd6e3c2dd4.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/right.png-115a737eb75d194758f3cc289a392948.stex"
+path="res://.import/left.png-737e347eca8e4621082c78a978733ced.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://keyboard_2/right.png"
-dest_files=[ "res://.import/right.png-115a737eb75d194758f3cc289a392948.stex" ]
+source_file="res://keyboard/left.png"
+dest_files=[ "res://.import/left.png-737e347eca8e4621082c78a978733ced.stex" ]
 
 [params]
 

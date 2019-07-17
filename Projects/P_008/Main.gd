@@ -5,6 +5,4 @@ func _physics_process(delta):
 		var pos = Vector2(900, 500)
 		$Obj.set_position(pos)
 		#$Obj.move_and_slide(pos)
-		
-#	if Input.is_key_pressed():
-#		print("click")
+

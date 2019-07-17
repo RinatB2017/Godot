@@ -11,8 +11,11 @@ extents = Vector2( 32, 32 )
 script = ExtResource( 1 )
 
 [node name="Obj" type="Area2D" parent="."]
-position = Vector2( 53.0736, 53.0736 )
+position = Vector2( 49.0931, 49.0931 )
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="Obj"]
 texture = ExtResource( 3 )

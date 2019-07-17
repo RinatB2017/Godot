@@ -4,7 +4,7 @@
 [ext_resource path="res://godot.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 29.708, 30.3316 )
+extents = Vector2( 32, 32 )
 
 [node name="Victory_obj" type="Area2D"]
 script = ExtResource( 1 )

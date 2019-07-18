@@ -16,8 +16,12 @@ _global_script_class_icons={
 [application]
 
 config/name="P_008"
-run/main_scene="res://Game_15/Game_15.tscn"
+run/main_scene="res://main/Main.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+G="*res://global.gd"
 
 [rendering]
 

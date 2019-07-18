@@ -11,3 +11,5 @@ func _input_event(viewport, event, shape_idx):
 
 func on_click():
 	print("Click " + str(n_bone))
+	#print(G.get_name())
+	G.to("Control")

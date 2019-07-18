@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://levels/level_002/level_002.gd" type="Script" id=1]
+[ext_resource path="res://levels/level_002/prev.gd" type="Script" id=2]
+
+[node name="level_002" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="Label" type="Label" parent="."]
+anchor_right = 1.0
+margin_bottom = 14.0
+
+[node name="prev" type="Button" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -80.0
+margin_right = 200.0
+script = ExtResource( 2 )

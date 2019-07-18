@@ -319,4 +319,3 @@ material = SubResource( 20 )
 position = Vector2( 1600, 800 )
 texture = ExtResource( 1 )
 region_rect = Rect2( 141, 115, 39, 6 )
-

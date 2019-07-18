@@ -16,5 +16,4 @@ text = "Load in Thread"
 
 [node name="sprite" type="Sprite" parent="."]
 position = Vector2( 248, 256 )
-
 [connection signal="pressed" from="load" to="." method="_on_load_pressed"]

@@ -3,7 +3,7 @@
 [ext_resource path="res://levels/level_000/level_000.gd" type="Script" id=1]
 [ext_resource path="res://levels/level_000/next.gd" type="Script" id=2]
 
-[node name="Level_000" type="Control"]
+[node name="level_000" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )

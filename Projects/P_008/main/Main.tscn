@@ -58,5 +58,6 @@ margin_left = 436.318
 margin_top = 490.092
 margin_right = 638.318
 margin_bottom = 560.092
+action_mode = 0
 icon = ExtResource( 3 )
 script = ExtResource( 4 )

@@ -69,8 +69,13 @@ func _input(event):
 	elif event.is_action_released("ui_right"):
 		#print("release")
 		velocity.x = 0
-
+		
 func _physics_process(delta):
+	
+#	for body in $Area2D.get_overlapping_bodies():
+#		if body.get_name() != "Player":
+#			print(body.get_name())
+	
 	#get_node("../CanvasLayer/EnergyBar").set_value(energy)
 	if Input.is_action_just_pressed("shoot"):
 		shoot()

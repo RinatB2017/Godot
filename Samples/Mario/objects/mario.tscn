@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://models/mario/mario.glb" type="PackedScene" id=1]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Spatial
+
+func play(state, speed = 1):
+	if $AnimationPlayer.current_animation != state:
+		$AnimationPlayer.playback_speed = speed
+		$AnimationPlayer.play(state, 0.2)"
+
+[node name="mario" instance=ExtResource( 1 )]
+script = SubResource( 1 )
+
+[node name="Armature" parent="." index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.27029, -0.473573 )
+
+[node name="AnimationPlayer" parent="." index="2"]
+autoplay = "idle"

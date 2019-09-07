@@ -1,0 +1,152 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://objects/mario.tscn" type="PackedScene" id=1]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends KinematicBody
+
+onready var m = $mario
+
+const VEL_SPEED = 6
+const ROT_SPEED = 0.1
+const GR_SPEED = 0.5
+
+var vel = Vector3()
+
+var need_speed = 0
+var speed = 0
+
+
+
+func _physics_process(delta):
+	if Input.is_action_pressed('ui_left'):
+		need_speed = 1
+	elif Input.is_action_pressed('ui_right'):
+		need_speed = -1
+	else:
+		need_speed = 0
+	
+	if Input.is_action_just_pressed('ui_jump') && is_on_floor():
+		vel.y = 17
+
+	speed = lerp(speed, need_speed, delta*8)
+	vel.z = speed * VEL_SPEED
+	vel.y -= GR_SPEED
+	vel = move_and_slide(vel, Vector3.UP)
+	transform.origin.x = 0
+
+	if !is_on_floor():
+		if vel.y > 1:
+			m.play('jump')
+		else:
+			m.play('fall')
+	elif need_speed:
+		m.rotation.y = lerp(m.rotation.y, 0 if need_speed > 0 else PI, delta*8)
+		m.play('move', 2.5)
+	else:
+		m.play('idle')
+
+
+
+
+func kill():
+	print('kill!!!!')
+
+
+func mashroom():
+	$AnimationPlayer.play('big')
+
+
+
+
+
+
+
+
+
+
+
+func _on_head_body_exited(body):
+	if body.has_method('collide_head'):
+		body.collide_head()
+"
+
+[sub_resource type="CapsuleShape" id=3]
+radius = 0.4
+height = 0.442397
+
+[sub_resource type="BoxShape" id=4]
+extents = Vector3( 0.202473, 0.0797616, 0.193702 )
+
+[sub_resource type="Animation" id=5]
+resource_name = "big"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("mario:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0.42468, 0.42468, 0.42468 ), Vector3( 0.631303, 0.631303, 0.631303 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("head:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 1.23206, 0 ), Vector3( 0, 1.79738, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("body:translation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0.614309, 0 ), Vector3( 0, 0.90237, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("body:shape:height")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.442397, 1.0 ]
+}
+
+[node name="player" type="KinematicBody"]
+script = SubResource( 1 )
+
+[node name="body" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 0.614309, 0 )
+shape = SubResource( 3 )
+
+[node name="head" type="Area" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.23206, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="head"]
+shape = SubResource( 4 )
+
+[node name="mario" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.42468, 0, 0, 0, 0.42468, 0, 0, 0, 0.42468, 0, 0.0362979, 0 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/big = SubResource( 5 )
+[connection signal="body_exited" from="head" to="." method="_on_head_body_exited"]

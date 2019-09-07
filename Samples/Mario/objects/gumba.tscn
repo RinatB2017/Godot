@@ -1,0 +1,89 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://models/gumba/model.mesh" type="ArrayMesh" id=1]
+[ext_resource path="res://models/gumba/move.anim" type="Animation" id=2]
+
+[sub_resource type="GDScript" id=3]
+script/source = "extends KinematicBody
+
+var dir = 1
+
+
+
+func _physics_process(delta):
+	move_and_slide(Vector3(0,-3,dir), Vector3.UP)
+
+
+
+func _on_Area_body_entered(body):
+	if body.name != 'player':
+		dir *= -1
+		$Armature.rotation.y = 0 if dir > 0 else PI
+	else:
+		body.vel.y = 10
+		queue_free()"
+
+[sub_resource type="CylinderShape" id=1]
+radius = 0.544899
+height = 1.3989
+
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 0.401269, 0.24883, 0.630185 )
+
+[node name="gumba" type="KinematicBody"]
+script = SubResource( 3 )
+
+[node name="Armature" type="Skeleton" parent="."]
+editor/display_folded = true
+bones/0/name = "Bone"
+bones/0/parent = -1
+bones/0/rest = Transform( 1, -1.42094e-014, 4.29069e-006, 4.28701e-006, -0.0436781, -0.998947, 1.87427e-007, 0.999046, -0.0436781, 0, 0.320212, -0.508622 )
+bones/0/enabled = true
+bones/0/bound_children = [  ]
+bones/1/name = "Bone.001"
+bones/1/parent = 0
+bones/1/rest = Transform( 1, 4.24148e-006, 4.09529e-007, 2.3569e-007, -0.151014, 0.988532, 4.25468e-006, -0.988532, -0.151014, 0, 0.536292, -2.98023e-008 )
+bones/1/enabled = true
+bones/1/bound_children = [  ]
+bones/2/name = "Bone.002"
+bones/2/parent = 1
+bones/2/rest = Transform( 1, -1.1805e-007, -3.12612e-008, 1.18043e-007, 0.868823, 0.495124, -3.12891e-008, -0.495124, 0.868822, -1.95399e-014, 0.252641, 1.86265e-008 )
+bones/2/enabled = true
+bones/2/bound_children = [  ]
+bones/3/name = "Bone.003"
+bones/3/parent = 0
+bones/3/rest = Transform( 1, -3.60614e-006, -1.70176e-006, 6.25197e-007, 0.563288, -0.826261, 3.9382e-006, 0.826261, 0.563288, 0.264034, 0.53658, 0.043835 )
+bones/3/enabled = true
+bones/3/bound_children = [  ]
+bones/4/name = "Bone.004"
+bones/4/parent = 0
+bones/4/rest = Transform( 1, -3.60614e-006, -1.70176e-006, 6.25197e-007, 0.563288, -0.826261, 3.9382e-006, 0.826261, 0.563288, -0.259189, 0.53658, 0.0438327 )
+bones/4/enabled = true
+bones/4/bound_children = [  ]
+
+[node name="model" type="MeshInstance" parent="Armature"]
+mesh = ExtResource( 1 )
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+
+[node name="Armature2" type="Spatial" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "move"
+anims/move = ExtResource( 2 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( -4.37114e-008, -1, 0, 1, -4.37114e-008, 0, 0, 0, 1, 0, 0.549129, 0 )
+shape = SubResource( 1 )
+
+[node name="Area" type="Area" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.149215, 0 )
+input_ray_pickable = false
+
+[node name="CollisionShape" type="CollisionShape" parent="Area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.90358, 0 )
+shape = SubResource( 2 )
+[connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]

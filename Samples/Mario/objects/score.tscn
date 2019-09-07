@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://models/score/score.glb" type="PackedScene" id=1]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Spatial
+
+onready var m = $model
+var timer = 0
+
+func _physics_process(delta):
+	m.rotate_y(delta*5)
+	transform.origin.y += 9*delta
+	timer += delta
+	if timer > 1:
+		queue_free()"
+
+[node name="score" instance=ExtResource( 1 )]
+script = SubResource( 1 )
+
+[node name="model" parent="." index="0"]
+transform = Transform( 0.285736, 0, 0, 0, 0.285736, 0, 0, 0, 0.285736, 0, 0.289769, 0 )
+cast_shadow = 0
